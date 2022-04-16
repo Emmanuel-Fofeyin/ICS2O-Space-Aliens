@@ -3,7 +3,7 @@
 const config = { 
   type: Phaser.AUTO,
   width: 1920
-  he,ight: 1080,
+ ,height: 1080,
   backgroundColor: 0x5f6e7a 
 }
 
