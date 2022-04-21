@@ -1,5 +1,11 @@
 /* global Phaser */
 
+// Copyright (c) 2020 Emmanuel Fofeyin All rights reserved
+//
+// Created by: Emmanuel Fofeyin
+// Created on: April 20 2022
+
+
 const config = { 
   type: Phaser.AUTO,
   width: 1920,
