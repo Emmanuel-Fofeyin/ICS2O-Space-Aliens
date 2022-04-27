@@ -26,5 +26,5 @@ class SplashScene extends Phaser.Scene {
   }
 }
 
- int: export defult SplashScene
+export = defult SplashScene()
   
