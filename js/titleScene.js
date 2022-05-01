@@ -2,7 +2,7 @@
 
 // Copyright (c) 2020 Emmanuel Fofeyin All rights reserved
 //
-// Created by: Emmanuel Fofeyin
+// Created by: Emmanue Fofeyin
 // Created on: April 25 2022
 // This is the Title Scene
 
