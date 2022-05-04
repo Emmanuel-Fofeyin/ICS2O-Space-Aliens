@@ -15,7 +15,7 @@ class SplashScene extends Phaser.Scene {
     this.cameras.main.setBackgroundColor ('#ffffff')
   }
 
-  preload () {
+  preload (); {
     console.log('Splash Scene')
     this.load.image('splashSceneBackground', './assets/splashSceneImage.png')
   }
