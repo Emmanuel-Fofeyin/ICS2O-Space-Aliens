@@ -8,23 +8,20 @@
 
 class TitleScene extends Phaser.Scene {
   constructor() {
-    super({ key: "titleScene"})
+    super({ key: "titleScene" })
   }
 
-  int (data) {
-    this.cameras.main.setBackgroundColor ("#ffffff")
+  int(data) {
+    this.cameras.main.setBackgroundColor("#ffffff")
   }
 
-  preload () {
+  preload() {
     console.log("Title Scene")
   }
 
-  create (data) {
-  }
+  create(data) {}
 
-  update (time, delta){
-  }
+  update(time, delta) {}
 }
 
-export default TitleScene 
-  
+export default TitleScene

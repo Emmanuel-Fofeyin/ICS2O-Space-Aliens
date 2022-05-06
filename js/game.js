@@ -9,29 +9,28 @@
 import SplashScene from "./splashscene.js"
 import TitleScene from "./titlescene.js"
 
-
 //Our game scene
 const splashScene = new SplashScene()
 const titleScene = new TitleScene()
 
 //*Game scene */
-const config = { 
+const config = {
   type: Phaser.AUTO,
   width: 1920,
   height: 1080,
   physics: {
     defult: "arcade",
     arcade: {
-      debug: true
-    }
+      debug: true,
+    },
   },
   // set background color
   backgroundColor: 0x5f6e7a,
   scale: {
     mode: Phaser.Scale.FIT,
     // we place it in the middle of the page.
-    autoCenter: Phaser.Scale.CENTER_BOTH
-  }
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+  },
 }
 
 const game = new Phaser.Game(config)
