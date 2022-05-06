@@ -6,8 +6,9 @@
 // Created on: April 20 2022
 // This is a Phaser3 configuration file
 
-import SplashScene from './splashscene.js'
-import TitleScene from './titlescene.js'
+import SplashScene from "./splashscene.js"
+import TitleScene from "./titlescene.js"
+
 
 //Our game scene
 const splashScene = new SplashScene()
@@ -19,7 +20,7 @@ const config = {
   width: 1920,
   height: 1080,
   physics: {
-    defult: 'arcade',
+    defult: "arcade",
     arcade: {
       debug: true
     }
@@ -37,8 +38,8 @@ const game = new Phaser.Game(config)
 
 // load scene
 // NOTE: remember any "key" is global and CAN NOT BE reused
-game.scene.add('splashScene', splashScene)
-game.scene.add('titleScene', titleScene)
+game.scene.add("splashScene", splashScene)
+game.scene.add("titleScene", titleScene)
 
 //start title
-game.scene.add('splashScene')
+game.scene.add("splashScene")
