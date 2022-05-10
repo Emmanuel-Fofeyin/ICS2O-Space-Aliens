@@ -1,18 +1,20 @@
 /* global Phaser */
 
-// Copyright (c) 2020 Emmanuel Fofeyin All rights reserved
+// Copyright (c) 2020 Mr. Coxall All rights reserved
 //
-// Created by: Emmanuel Fofeyin
-// Created on: April 20 2022
-// This is a Phaser3 configuration file
+// Created by: Mr. Coxall
+// Created on: Sep 2020
+// This is the Phaser3 game configuration file
 
-//scene important statments
-import SplashScene from "./splashscene.js"
-import TitleScene from "./titlescene.js"
+// scene import statements
+import SplashScene from "./splashScene.js"
+import TitleScene from "./titleScene.js"
+import MenuScene from "./menuScene.js"
 
-// creat the new scenes
+// create the new scenes
 const splashScene = new SplashScene()
 const titleScene = new TitleScene()
+const menuScene = new MenuScene()
 
 /**
  * Start Phaser Game.
@@ -22,13 +24,13 @@ const config = {
   width: 1920,
   height: 1080,
   physics: {
-    defult: "arcade",
+    default: "arcade",
     arcade: {
       debug: true,
     },
   },
   // set background color
-  backgroundColor: 0xffffff,
+  backgroundColor: 0x5f6e7a,
   scale: {
     mode: Phaser.Scale.FIT,
     // we place it in the middle of the page.
@@ -39,10 +41,11 @@ const config = {
 const game = new Phaser.Game(config)
 // console.log(game)
 
-// load scene
-// NOTE: remember any "key" is global and CAN NOT BE reused!
+// load scenes
+// Note: remember any "key" is global and CAN NOT be reused!
 game.scene.add("splashScene", splashScene)
 game.scene.add("titleScene", titleScene)
+game.scene.add("menuScene", menuScene)
 
-//start title
-game.scene.add("splashScene")
+// the start scene
+game.scene.start("splashScene")
