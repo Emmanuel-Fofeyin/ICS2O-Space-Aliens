@@ -1,22 +1,20 @@
 /* global Phaser */
 
-// Copyright (c) 2020 Mr Coxall All rights reserved
+// Copyright (c) 2022 Emmanuel All rights reserved
 //
-// Created by: Mr Coxall
-// Created on: Sep 2020
-// This is the Splash Scene
+// Created by: Emmanuel-Fofeyin
+// Created on: May 2022
+// This is the Menu Scene
 
 /**
- * This class is the Splash Scene.
+ * This class is the Menu Scene.
  */
-class SplashScene extends Phaser.Scene {
+class MenuScene extends Phaser.Scene {
   /**
    * This method is the construtor.
    */
   constructor() {
-    super({ key: "splashScene" })
-
-    this.splashSceneBackgroundImage = null
+    super({ key: "menuScene" })
   }
 
   /**
@@ -26,7 +24,7 @@ class SplashScene extends Phaser.Scene {
    * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start().
    */
   init(data) {
-    this.cameras.main.setBackgroundColor("#ffffff")
+    this.cameras.main.setBackgroundColor("ffffff")
   }
 
   /**
@@ -34,8 +32,7 @@ class SplashScene extends Phaser.Scene {
    * Use it to load assets.
    */
   preload() {
-    console.log("Splash Scene")
-    this.load.image("splashSceneBackground", "./assets/splashSceneImage.png")
+    console.log("Menu Scene")
   }
 
   /**
@@ -44,13 +41,7 @@ class SplashScene extends Phaser.Scene {
    * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start().
    */
   create(data) {
-    this.splashSceneBackgroundImage = this.add.sprite(
-      0,
-      0,
-      "splashSceneBackground"
-    )
-    this.splashSceneBackgroundImage.x = 1920 / 2
-    this.splashSceneBackgroundImage.y = 1080 / 2
+    // pass
   }
 
   /**
@@ -60,10 +51,8 @@ class SplashScene extends Phaser.Scene {
    *  @param {number} delta - The delta time in ms since the last frame.
    */
   update(time, delta) {
-    if (time > 3000) {
-      this.scene.switch("titleScene")
-    }
+    // pass
   }
 }
 
-export default SplashScene
+export default MenuScene
