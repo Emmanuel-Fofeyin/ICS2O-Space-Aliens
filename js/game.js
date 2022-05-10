@@ -50,6 +50,5 @@ game.scene.add("TitleScene", titleScene)
 game.scene.add("MenuScene", menuScene)
 game.scene.add("GameScene", gameScene)
 
-
 // the start scene
 game.scene.start("splashScene")
