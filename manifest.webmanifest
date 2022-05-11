@@ -1,7 +1,7 @@
 {
-  "name": "Emmanuel's App",
-  "short_name": "Emmanuel's App",
-  "description": "Github Page for Emmanuel's App",
+  "name": "Space aliens",
+  "short_name": "Space aliens",
+  "description": "Github Page for Space aliens",
   "scope": "/ICS2O-Space-Aliens/",
   "start_url": "/ICS2O-Space-Aliens/",
   "background_color": "#ffffff",
