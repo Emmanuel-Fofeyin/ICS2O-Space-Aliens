@@ -58,7 +58,7 @@ class GameScene extends Phaser.Scene {
    *  @param {number} delta - The delta time in ms since the last frame.
    */
   update(time, delta) {
-    // called 60 times a second, hopfully!
+    // called 60 times a second, hopefully!
 
     const keyLeftObj = this.input.keyboard.addKey("LEFT")
     const keyRightObj = this.input.keyboard.addKey("RIGHT")
