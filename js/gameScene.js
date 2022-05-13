@@ -57,7 +57,26 @@ class GameScene extends Phaser.Scene {
    *  @param {number} time - The current time.
    *  @param {number} delta - The delta time in ms since the last frame.
    */
-  update(time, delta) {}
+  update(time, delta) {
+    // called 60 times a second, hopfully!
+
+    const keyLeftObj = this.input.keyboard.addKey("LEFT")
+    const keyRightObj = this.input.keyboard.addKey("RIGHT")
+
+    if (keyLeftObj.isDown === true) {
+      this.ship.x -= 25
+      if (this.ship.x < 0) {
+        this.ship.x = 0
+      }
+    }
+
+    if (keyRightObj.isDown === true) {
+      this.ship.x += 25
+      if (this.ship.x > 1920) {
+        this.ship.x = 1920 
+      }
+    }
+  }
 }
 
 export default GameScene
