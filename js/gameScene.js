@@ -57,8 +57,7 @@ class GameScene extends Phaser.Scene {
    *  @param {number} time - The current time.
    *  @param {number} delta - The delta time in ms since the last frame.
    */
-  update(time, delta) {
-  }
+  update(time, delta) {}
 }
 
 export default GameScene
