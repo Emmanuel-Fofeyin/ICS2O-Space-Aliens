@@ -1,8 +1,8 @@
 /* global Phaser */
 
-// Copyright (c) 2022 Evgeny Vovk All rights reserved
+// Copyright (c) 2022 Emmanuel All rights reserved
 //
-// Created by: Evgeny Vovk
+// Created by: Emmanuel
 // Created on: May 2022
 // This is the Title Scene
 
