@@ -18,9 +18,7 @@ const titleScene = new TitleScene()
 const menuScene = new MenuScene()
 const gameScene = new GameScene()
 
-/**
- * Start Phaser Game.
- */
+//* Game scene */
 const config = {
   type: Phaser.AUTO,
   width: 1920,
@@ -29,10 +27,10 @@ const config = {
     default: "arcade",
     arcade: {
       debug: true,
-    },
+    }
   },
   // set background color
-  backgroundColor: 0x5f6e7a,
+  backgroundColor: 0xffffff,
   scale: {
     mode: Phaser.Scale.FIT,
     // we place it in the middle of the page.
@@ -41,7 +39,6 @@ const config = {
 }
 
 const game = new Phaser.Game(config)
-// console.log(game)
 
 // load scenes
 // Note: remember any "key" is global and CAN NOT be reused!
