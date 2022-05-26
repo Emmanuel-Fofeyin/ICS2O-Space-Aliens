@@ -1,6 +1,6 @@
 /* global Phaser */
 
-// Copyright (c) 2022 Emmanuel All rights reserved
+// Copyright (c) 2022 Emmanuel.Fofeyin All rights reserved
 //
 // Created by: Emmanuel
 // Created on: May 2022
@@ -18,7 +18,9 @@ const titleScene = new TitleScene()
 const menuScene = new MenuScene()
 const gameScene = new GameScene()
 
-//* Game scene */
+/**
+ * Start Phaser Game.
+ */
 const config = {
   type: Phaser.AUTO,
   width: 1920,
@@ -30,7 +32,7 @@ const config = {
     },
   },
   // set background color
-  backgroundColor: 0xffffff,
+  backgroundColor: 0x5f6e7a,
   scale: {
     mode: Phaser.Scale.FIT,
     // we place it in the middle of the page.
@@ -39,6 +41,7 @@ const config = {
 }
 
 const game = new Phaser.Game(config)
+// console.log(game)
 
 // load scenes
 // Note: remember any "key" is global and CAN NOT be reused!
