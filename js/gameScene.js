@@ -10,9 +10,8 @@
  * This class is the Game Scene.
  */
 class GameScene extends Phaser.Scene {
-
   // create an alien
-  createAlien () {
+  createAlien() {
     const alienXLocation = Math.floor(Math.random() * 1920) + 1 //spawns the alien between 1 and 1921 pixel
     let alienXVelocity = Math.floor(Math.random() * 50) + 1 // random speed of the alien
     alienXVelocity *= Math.round(Math.random()) ? 1 : -1 // this will add minus sign to 50% of cases
@@ -21,7 +20,7 @@ class GameScene extends Phaser.Scene {
     anAlien.body.velocity.x = alienXVelocity
     this.alienGroup.add(anAlien)
   }
-  
+
   constructor() {
     super({ key: "gameScene" })
 
