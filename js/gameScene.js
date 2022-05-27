@@ -29,6 +29,8 @@ class GameScene extends Phaser.Scene {
     this.load.image("starBackground", "./assets/starBackground.png")
     this.load.image("ship", "./assets/spaceShip.png")
     this.load.image("missile", "./assets/missile.png")
+    //sound
+    this.load.audio("laser", "./assets/laser1.wav")
   }
 
   create(data) {
@@ -52,28 +54,28 @@ class GameScene extends Phaser.Scene {
     
 
     if (keyForwardObj.isDown === true) {
-      this.ship.y -= 6
+      this.ship.y -= 17
       if (this.ship.y < 700) {
         this.ship.y = 700
       }
     }
     
     if (keyLeftObj.isDown === true) {
-      this.ship.x -= 6
+      this.ship.x -= 17
       if (this.ship.x < 0) {
         this.ship.x = 0
       }
     }
     
     if (keyBackwardObj.isDown === true) {
-      this.ship.y += 6
+      this.ship.y += 17
       if (this.ship.y > 1080) {
         this.ship.y = 1080
       }
     }
     
     if (keyRightObj.isDown === true) {
-      this.ship.x += 6
+      this.ship.x += 17
       if (this.ship.x > 1920) {
         this.ship.x = 1920
       }
@@ -85,12 +87,19 @@ class GameScene extends Phaser.Scene {
         this.fireMissile = true
         const aNewMissile = this.physics.add.sprite(this.ship.x, this.ship.y, "missile")
         this.missileGroup.add(aNewMissile)
+        this.sound.play("laser")
       }
     }
 
     if (keySpaceObj.isUp === true) {
       this.fireMissile = false
     }
+
+    this.missileGroup.children.each(function (item) {
+      item.y = item.y - 15
+      if (item.y < 0)
+        item.destroy()
+    })
   }
 }
 
