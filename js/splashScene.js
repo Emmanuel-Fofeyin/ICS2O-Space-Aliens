@@ -1,14 +1,11 @@
 /* global Phaser */
 
-// Copyright (c) 2020 Mr Coxall All rights reserved
+// Copyright (c) 2022 Emmanuel All rights reserved
 //
-// Created by: Mr Coxall
+// Created by: Emmanuel-Fofeyin
 // Created on: Sep 2020
 // This is the Splash Scene
 
-/**
- * This class is the Splash Scene.
- */
 class SplashScene extends Phaser.Scene {
   constructor() {
     super({ key: "splashScene" })
@@ -24,11 +21,7 @@ class SplashScene extends Phaser.Scene {
   }
 
   create(data) {
-    this.splashSceneBackgroundImage = this.add.sprite(
-      0,
-      0,
-      "splashSceneBackground"
-    )
+    this.splashSceneBackgroundImage = this.add.sprite(0, 0, "splashSceneBackground")
     this.splashSceneBackgroundImage.x = 1920 / 2
     this.splashSceneBackgroundImage.y = 1080 / 2
   }

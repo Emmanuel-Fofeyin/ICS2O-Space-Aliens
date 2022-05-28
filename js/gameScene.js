@@ -6,21 +6,19 @@
 // Created on: May 2022
 // This is the Game Scene
 
-/**
- * This class is the Game Scene.
- */
 class GameScene extends Phaser.Scene {
+
   // create an alien
-  createAlien() {
+  createAlien () {
     const alienXLocation = Math.floor(Math.random() * 1920) + 1 //spawns the alien between 1 and 1921 pixel
-    let alienXVelocity = Math.floor(Math.random() * 50) + 1 // random speed of the alien
+    let alienXVelocity = Math.floor(Math.random() * 50) + 1 // this will get number between 1 and 50
     alienXVelocity *= Math.round(Math.random()) ? 1 : -1 // this will add minus sign to 50% of cases
     const anAlien = this.physics.add.sprite(alienXLocation, -100, "alien")
     anAlien.body.velocity.y = 200
     anAlien.body.velocity.x = alienXVelocity
     this.alienGroup.add(anAlien)
   }
-
+ 
   constructor() {
     super({ key: "gameScene" })
 
@@ -29,7 +27,7 @@ class GameScene extends Phaser.Scene {
     this.fireMissile = false
     this.score = 0
     this.scoreText = null
-    this.scoreTextStyle = { font: "65px Ariel", fill: "#ffffff", align: "center" }
+    this.scoreTextStyle = { font: "65px Oswald", fill: "#ffffff", align: "center"}
   }
 
   init(data) {
@@ -43,13 +41,13 @@ class GameScene extends Phaser.Scene {
     this.load.image("starBackground", "./assets/starBackground.png")
     this.load.image("ship", "./assets/spaceShip.png")
     this.load.image("missile", "./assets/missile.png")
-    this.load.image("alien", "./assets/alien.png")
-    //sound
+    this.load.image("alien", "assets/alien.png")
+    // sound
     this.load.audio("laser", "./assets/laser1.wav")
     this.load.audio("explosion", "./assets/barrelExploding.wav")
   }
 
-  create(data) {
+  create (data) {
     this.background = this.add.image(0, 0, "starBackground").setScale(2.0)
     this.background.setOrigin(0, 0)
 
@@ -65,29 +63,15 @@ class GameScene extends Phaser.Scene {
     this.createAlien()
 
     //Collisions between missiles and aliens
-<<<<<<< HEAD:js/gаmeScene.js
     this.physics.add.collider(this.missileGroup, this.alienGroup, function (missileCollide, alienCollide){
       alienCollide.destroy()
       missileCollide.destroy()
       this.sound.play("explosion")
-      this.score = this.score + 1
-      this.scoreText.setText("Score" + this.score.toString())
+      this.score + this.score + 1
+      this.scoreText.setText("Score: " + this.score.toString())
       this.createAlien()
       this.createAlien()
     }.bind(this))
-=======
-    this.physics.add.collider(
-      this.missileGroup,
-      this.alienGroup,
-      function (missileCollide, alienCollide) {
-        alienCollide.destroy()
-        missileCollide.destroy()
-        this.sound.play("explosion")
-        this.createAlien()
-        this.createAlien()
-      }.bind(this)
-    )
->>>>>>> origin/main:js/gameScene.js
   }
 
   update(time, delta) {
@@ -98,44 +82,41 @@ class GameScene extends Phaser.Scene {
     const keyBackwardObj = this.input.keyboard.addKey("S")
     const keyRightObj = this.input.keyboard.addKey("D")
     const keySpaceObj = this.input.keyboard.addKey("SPACE")
+    
 
     if (keyForwardObj.isDown === true) {
-      this.ship.y -= 17
+      this.ship.y -= 20
       if (this.ship.y < 700) {
         this.ship.y = 700
       }
     }
-
+    
     if (keyLeftObj.isDown === true) {
-      this.ship.x -= 17
+      this.ship.x -= 20
       if (this.ship.x < 0) {
         this.ship.x = 0
       }
     }
-
+    
     if (keyBackwardObj.isDown === true) {
-      this.ship.y += 17
+      this.ship.y += 20
       if (this.ship.y > 1080) {
         this.ship.y = 1080
       }
     }
-
+    
     if (keyRightObj.isDown === true) {
-      this.ship.x += 17
+      this.ship.x += 20
       if (this.ship.x > 1920) {
         this.ship.x = 1920
       }
     }
-
+    
     if (keySpaceObj.isDown === true) {
       if (this.fireMissile === false) {
         //fire missile
         this.fireMissile = true
-        const aNewMissile = this.physics.add.sprite(
-          this.ship.x,
-          this.ship.y,
-          "missile"
-        )
+        const aNewMissile = this.physics.add.sprite(this.ship.x, this.ship.y, "missile")
         this.missileGroup.add(aNewMissile)
         this.sound.play("laser")
       }
@@ -147,7 +128,9 @@ class GameScene extends Phaser.Scene {
 
     this.missileGroup.children.each(function (item) {
       item.y = item.y - 15
-      if (item.y < 0) item.destroy()
+      if (item.y < 0) {
+        item.destroy()
+      }
     })
   }
 }
