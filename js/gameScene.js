@@ -47,6 +47,9 @@ class GameScene extends Phaser.Scene {
   preload() {
     console.log("Game Scene")
 
+    // background music
+    this.load.audio("music", "./assets/epic-music.m4a")
+
     // images
     this.load.image("starBackground", "./assets/galaxy.png")
     this.load.image("ship", "./assets/pod.png")
@@ -94,26 +97,24 @@ class GameScene extends Phaser.Scene {
     )
 
     //collisions between ship and aliens
-    this.physics.add.collider(
-      this.ship,
-      this.alienGroup,
-      function (shipCollide, alienCollide) {
-        this.sound.play("bomb")
-        this.physics.pause()
-        alienCollide.destroy()
-        shipCollide.destroy()
-        this.gameOverText = this.add
-          .text(
-            1920 / 2,
-            1080 / 2,
-            "Game Over!\nClick to play again.",
-            this.gameOverTextStyle
-          )
-          .setOrigin(0.5)
-        this.gameOverText.setInteractive({ useHandCursor: true })
-        this.gameOverText.on("pointerdown", () => this.scene.start("gameScene"))
-      }.bind(this)
-    )
+     this.physics.add.collider(this.ship, this.alienGroup, function (shipCollide, alienCollide){
+      this.sound.play("bomb")
+      this.physics.pause()
+      alienCollide.destroy()
+      shipCollide.destroy()
+      this.gameOverText = this.add.text (1920 / 2, 1080 / 2, "Game Over!\nClick to play again.", this.gameOverTextStyle).setOrigin(0.5)
+      this.gameOverText.setInteractive({ useHandCursor: true })
+      this.score = 0
+      this.gameOverText.on("pointerdown", () => this.scene.start("gameScene"))
+      this.music.stop()
+      }.bind(this))
+
+     //background music
+     this.music =  this.sound.add('music', {
+  		volume: 0.7,
+  		loop: true
+  	})
+  	this.music.play()
   }
 
   update(time, delta) {
